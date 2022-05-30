@@ -1,0 +1,18 @@
+--- #java application playbook
+
+- hosts: dev
+  user: root
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+  - name: install docker
+    action: yum pkg=docker state=present
+    notify:  start docker
+  
+  handlers:
+  - name: start docker
+    service: 
+      name: docker
+      state: started
