@@ -10,6 +10,9 @@
   - name: install docker
     action: yum pkg=docker state=present
     notify:  start docker
+    
+  - name: install git
+    action: yum pkg=git state=present
   
   handlers:
   - name: start docker
