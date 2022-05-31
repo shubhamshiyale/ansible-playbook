@@ -1,7 +1,7 @@
 --- #java application playbook
 
 - hosts: dev
-  user: ansible
+  user: shubham
   become: yes
   connection: ssh
   gather_facts: yes
